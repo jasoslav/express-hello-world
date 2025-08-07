@@ -8,6 +8,8 @@ app.get('/', (req, res) => {
 });
 
 // JSON odpoveď pre root endpoint
+// example to check: https://express-hello-world-0ro6.onrender.com/timestamptodate?timestamp=1691660000   2023‑08‑10T06:26:40Z
+
 app.get('/timestamptodate', (req, res) => {
   const timestamp = Number(req.query.timestamp);
   if (isNaN(timestamp)) {
