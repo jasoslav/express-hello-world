@@ -3,6 +3,7 @@ const app = express();
 const port = process.env.PORT || 3001;
 
 // example to check: https://express-hello-world-0ro6.onrender.com/
+// result example: {"company":"My Company","timestampNow":1754568859972}
 app.get('/', (req, res) => {
   res.json({ company: 'My Company', timestampNow: Date.now() });
 });
@@ -15,7 +16,7 @@ app.get('/timestamptodate', (req, res) => {
   if (isNaN(timestamp)) {
     return res.status(400).json({ error: 'Timestamp musí byť platné číslo.' });
   }
-  const date = new Date(timestamp * 1000);
+  const date = new Date(timestamp);
   res.json({ isoDate: date.toISOString() });
 });
 
